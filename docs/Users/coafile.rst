@@ -1,9 +1,11 @@
 The .coafile Specification
-==========================
+== == == == == == == == == == == == ==
 
 This document gives a short introduction into the specification of a
 coala configuration file. It is meant to be rather factual, if you wish
-to learn by example, please take a look at the :doc:`Tutorials/Tutorial`.
+to learn by example, please take a look at the:
+    doc:
+        `Tutorials/Tutorial`.
 
 Naming, Scope and Location
 --------------------------
@@ -50,7 +52,8 @@ coafile.
 
 This is an example coafile:
 
-::
+:
+    :
 
     enabled = True
     overridable = 2
@@ -66,7 +69,8 @@ This is an example coafile:
 This coafile would be interpreted the very same as this one, written a
 bit more explicitly:
 
-::
+:
+    :
 
     [default]
     enabled = True
@@ -85,17 +89,19 @@ bit more explicitly:
 Comments, Escaping and Multiline Values and Keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Comments are simply done with a preceding ``#``. If you want to use a
-``#`` within a value, you can simply escape it:
+Comments are simply done with a preceding ``  # ``. If you want to use a
+``  # `` within a value, you can simply escape it:
 
-::
+:
+    :
 
-    a_key = a\#value # And a comment at the end!
+    a_key = a\  # value # And a comment at the end!
 
 Any line not containing an unescaped ``=`` is simply appended to the
 value of the last key:
 
-::
+:
+    :
 
     a_key = a
     value
@@ -108,6 +114,6 @@ Similarly, you can also set a value to multiple keys:
 ``key_2 = value`` in separate lines.
 
 As the backslash is the escape character it is recommended to use
-forward slashes as path seperator even on windows (to keep relative
-paths platform independent), use double-backslashes if you really mean a
+forward slashes as path seperator even on windows(to keep relative
+                                                  paths platform independent), use double-backslashes if you really mean a
 backslash in all places.

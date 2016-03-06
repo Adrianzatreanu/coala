@@ -1,8 +1,9 @@
 Codestyle for coala
-===================
+== == == == == == == == == =
 
 coala follows the `PEP8
-codestyle <https://www.python.org/dev/peps/pep-0008/>`__ with a maximum
+codestyle < https:
+    //www.python.org/dev/peps/pep-0008/>`__ with a maximum
 line length of 80 characters including newline. Invoke ``coala`` to let
 it correct your code automatically.
 
@@ -24,7 +25,8 @@ should begin at the same column.
 
 Example:
 
-::
+:
+    :
 
     def area(length, breadth):
         """
@@ -41,15 +43,20 @@ If the description for a param or other keywords exceeds 1 line,
 continue it in the next. Make sure that the second line is aligned Below
 the first line.
 
-Example :
+Example:
 
-::
+:
+    :
 
-    :param something: A very long line describing the variable something
-                      in great detail.
-    :return:          This message also started in the same column and it
-                      starts again at the same column as the rest of the
-                      messages.
+    :
+        param something:
+            A very long line describing the variable something
+        in great detail.
+    :
+        return:
+            This message also started in the same column and it
+        starts again at the same column as the rest of the
+        messages.
 
 Type Checking
 ~~~~~~~~~~~~~
@@ -58,7 +65,9 @@ If you want to assure that parameters have a certain type, you can use
 the ``enforce_signature`` decorator and simply annotate your function
 with the allowed types:
 
-.. code:: python
+.. code:
+    :
+        python
 
     @enforce_signature
     def concatenate_strings(a: str, b: str, c: (str, None)=None):

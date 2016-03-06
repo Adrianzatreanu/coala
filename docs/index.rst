@@ -1,75 +1,75 @@
 .. coala documentation master file, created by
-   sphinx-quickstart on Wed Feb  3 16:49:01 2016.
+   sphinx-quickstart on Wed Feb  3 16: 49: 01 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. meta::
-   :description: coala is a simple COde AnaLysis Application. Its goal is
+.. meta: :
+   : description: coala is a simple COde AnaLysis Application. Its goal is
                  to make static code analysis easy while remaining completely
                  modular and therefore extendable and language independent.
-   :keywords:    coala, code analysis, static code analysis, linter,
+   : keywords:    coala, code analysis, static code analysis, linter,
                  language agnostic, python3, linux, unix, windows, bears,
                  coala-bears
 
 Welcome to the coala documentation!
-===================================
+== == == == == == == == == == == == == == == == == =
 
-.. toctree::
-   :caption: Home
-   :hidden:
+.. toctree: :
+   : caption: Home
+   : hidden:
 
-   Welcome <self>
+   Welcome < self >
 
-.. toctree::
-   :caption: For Users
-   :hidden:
+.. toctree: :
+   : caption: For Users
+   : hidden:
 
-   Installation <Users/Install>
-   coafile Specification <Users/coafile>
-   Glob Patterns <Users/Glob_Patterns>
-   Exit Codes <Users/Exit_Codes>
-   External APIs <Users/External_APIs>
-   Git Hooks <Users/Git_Hooks>
+   Installation < Users/Install >
+   coafile Specification < Users/coafile >
+   Glob Patterns < Users/Glob_Patterns >
+   Exit Codes < Users/Exit_Codes >
+   External APIs < Users/External_APIs >
+   Git Hooks < Users/Git_Hooks >
 
-.. toctree::
-   :caption: Tutorials
-   :hidden:
+.. toctree: :
+   : caption: Tutorials
+   : hidden:
 
-   First Step <Users/Tutorials/Tutorial>
-   Writing Bears <Users/Tutorials/Writing_Bears>
-   Linter Bears <Users/Tutorials/Linter_Bears>
-   Linter Bears - Suggest corrections <Users/Tutorials/Self_Correcting_Bears>
-   Git Help <Users/Tutorials/Git_Help>
+   First Step < Users/Tutorials/Tutorial >
+   Writing Bears < Users/Tutorials/Writing_Bears >
+   Linter Bears < Users/Tutorials/Linter_Bears >
+   Linter Bears - Suggest corrections < Users/Tutorials/Self_Correcting_Bears >
+   Git Help < Users/Tutorials/Git_Help >
 
-.. toctree::
-   :caption: Getting Involved
-   :hidden:
+.. toctree: :
+   : caption: Getting Involved
+   : hidden:
 
-   Newcomers <Getting_Involved/Newcomers>
-   Introduction <Getting_Involved/README>
-   Codestyle <Getting_Involved/Codestyle>
-   Commit Style <Getting_Involved/Writing_Good_Commits>
-   Executing Tests <Getting_Involved/Testing>
-   Review <Getting_Involved/Review>
-   Writing Tests <Getting_Involved/Writing_Tests>
-   Writing Documentation <Getting_Involved/Writing_Documentation>
-   MAC Hints <Getting_Involved/MAC_Hints>
+   Newcomers < Getting_Involved/Newcomers >
+   Introduction < Getting_Involved/README >
+   Codestyle < Getting_Involved/Codestyle >
+   Commit Style < Getting_Involved/Writing_Good_Commits >
+   Executing Tests < Getting_Involved/Testing >
+   Review < Getting_Involved/Review >
+   Writing Tests < Getting_Involved/Writing_Tests >
+   Writing Documentation < Getting_Involved/Writing_Documentation >
+   MAC Hints < Getting_Involved/MAC_Hints >
 
-.. toctree::
-   :caption: General Developer Information
-   :hidden:
+.. toctree: :
+   : caption: General Developer Information
+   : hidden:
 
-   A Hitchhiker's Guide to Git (1): Genesis <General_Dev_Info/git_tutorial_1>
+   A Hitchhiker's Guide to Git(1): Genesis < General_Dev_Info/git_tutorial_1 >
 
-.. toctree::
-   :caption: API Documentation
-   :hidden:
+.. toctree: :
+   : caption: API Documentation
+   : hidden:
 
-   List of Modules<API/modules>
+   List of Modules < API/modules >
 
 .. Start ignoring LineLengthBear
 
-::
+: :
 
                                                          .o88Oo._
                                                         d8P         .ooOO8bo._

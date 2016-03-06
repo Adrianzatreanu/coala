@@ -1,5 +1,5 @@
 coala Tutorial
-==============
+== == == == == == ==
 
 Welcome to this little tutorial. It is meant to be a gentle introduction
 to the usage of coala.
@@ -20,7 +20,7 @@ can retrieve our tutorial samples:
 
 ::
 
-    git clone https://github.com/coala-analyzer/coala-tutorial.git
+    git clone https: // github.com/coala-analyzer/coala-tutorial
 
 Please note that the commands given in this tutorial are intended for
 use with this sample code and may need minor adjustments.
@@ -34,12 +34,12 @@ should perform on which code.
 Command Line Interface
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In order to specify the files to analyze, you can use the ``--files``
+In order to specify the files to analyze, you can use the ``- -files``
 argument of coala like demonstrated below. For all file paths, you can
-specify (recursive) globs.
+specify(recursive) globs.
 
 Because analysis routines can do many various things we named them
-*Bears*. Thus you can specify the kind of analysis with the ``--bears``
+*Bears*. Thus you can specify the kind of analysis with the ``- -bears``
 argument.
 
 Please type the following commands into the console:
@@ -47,7 +47,7 @@ Please type the following commands into the console:
 ::
 
     cd coala-tutorial
-    coala --files=src/\*.c --bears=SpaceConsistencyBear --save
+    coala - -files = src /\*.c - -bears = SpaceConsistencyBear - -save
 
 coala will now ask you for missing values that are needed to perform the
 analysis, which in this case is only the ``use_spaces`` setting. We
@@ -86,7 +86,7 @@ what is checked with which bears and make it available to all
 contributors.
 
 Feel free to play around with this file. You can either edit it manually
-or add/edit settings via ``coala --save ...`` invocations. If you want
+or add/edit settings via ``coala - -save ...`` invocations. If you want
 coala to save settings every time, you can add ``save = True`` manually
 into your ``.coafile``.
 
@@ -105,9 +105,9 @@ Let's check the line lengths of our Makefile:
 
 ::
 
-    coala -S Makefiles.bears=LineLengthBear Makefiles.files=Makefile --save
+    coala - S Makefiles.bears = LineLengthBear Makefiles.files = Makefile - -save
 
-As you can see, the ``-S`` (or ``--settings``) option allows to specify
+As you can see, the ``- S`` (or ``--settings``) option allows to specify
 arbitrary settings. Settings can be directly stored into a section with
 the ``section.setting`` syntax.
 
@@ -116,7 +116,7 @@ By default the ``LineLengthBear`` checks whether each line contains
 ``max_line_length`` inside the ``.coafile``.
 
 coala will now yield any result you didn't correct last time plus a new
-one for the Makefile. This time coala (or better, the
+one for the Makefile. This time coala(or better, the
 ``LineLengthBear``) doesn't know how to fix the issue but still tries to
 provide as much helpful information as possible and provides you the
 option to directly open the file in an editor of your choice.
@@ -165,9 +165,7 @@ code:
     Cheers!
     """
 
-
-
-    def add(a,b):
+    def add(a, b):
         return a+b;
 
     import sys
@@ -176,8 +174,8 @@ That looks horrible, doesn't it? Let's fix it!
 
 ::
 
-    $ coala -S python.bears=PEP8Bear python.files=\*\*/\*.py \
-    python.default_actions=PEP8Bear:ApplyPatchAction --save
+    $ coala - S python.bears = PEP8Bear python.files =\*\* /\*.py \
+    python.default_actions = PEP8Bear: ApplyPatchAction - -save
     # other output ...
     Executing section python...
     [INFO][11:03:37] Applied 'ApplyPatchAction' for 'PEP8Bear'.
@@ -187,8 +185,8 @@ coala would now fix all spacing issues and without bothering you again.
 
 Currently following actions are available:
 
--  ``ApplyPatchAction``: Applies a given patch (if existent).
--  ``ShowPatchAction``: Just displays a given patch (if existent)
+-  ``ApplyPatchAction``: Applies a given patch(if existent).
+-  ``ShowPatchAction``: Just displays a given patch(if existent)
    without doing something.
 
 For debugging purposes:
@@ -200,7 +198,7 @@ Setting Inheritance
 -------------------
 
 All settings in the default section are implicitly inherited to all
-other sections (if they do not override their values). We can use that
+other sections(if they do not override their values). We can use that
 to save a few lines!
 
 Lets add the following section to our ``.coafile``:
@@ -210,7 +208,7 @@ Lets add the following section to our ``.coafile``:
     [TODOS]
     bears = KeywordBear
 
-And execute coala with the ``-s`` argument which is the same as
+And execute coala with the ``- s`` argument which is the same as
 ``--save``. I recommend setting case insensitive keywords to
 ``TODO, FIXME`` and case sensitive keywords empty.
 
@@ -239,7 +237,7 @@ coala lets you ignore whole files through the ``ignore`` setting:
     files = **/*.h
     ignore = **/resources.h
 
-This configuration would include all header (``.h``) files but leaves
+This configuration would include all header(``.h``) files but leaves
 out resource headers.
 
 Ignoring code Inside Files
@@ -279,9 +277,9 @@ specify glob wildcards that match several bears:
     another_unwrappable_string = unwrappable_string + unwrappable_string_2
     # Stop ignoring
 
-In the above example all bears matching the glob `Line*` and `Py*` will
+In the above example all bears matching the glob `Line *` and `Py *` will
 be ignored. You may also specify more complex globs here such as
-`# Start ignoring (Line*|P[yx]*)` which will ignore all bears start with
+`  # Start ignoring (Line*|P[yx]*)` which will ignore all bears start with
 `Line`, `Py`, and `Px`.
 
 ::
@@ -302,8 +300,8 @@ are executed. coala provides two ways to do that:
 Manual Enabling/Disabling
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you add the line ``TODOS.enabled=False`` to some arbitrary place to
-your ``.coafile`` or just ``enabled=False`` into the ``TODOS`` section,
+If you add the line ``TODOS.enabled = False`` to some arbitrary place to
+your ``.coafile`` or just ``enabled = False`` into the ``TODOS`` section,
 coala will not show the TODOs on every run.
 
 Especially for those bears yielding informational messages which you
@@ -327,15 +325,15 @@ To get help on using a bear or to get a description of the bear, use the
 
 ::
 
-    coala --bears=SpaceConsistencyBear --show-bears
+    coala - -bears = SpaceConsistencyBear - -show-bears
 
 This will display a large amount of information regarding the bears that
-have been specified (in the ``.coafile`` of in the CLI arguments). It
+have been specified(in the ``.coafile`` of in the CLI arguments). It
 shows:
 
 -  A description of what the bear does
 -  The sections which uses it
--  The settings it uses (optional and required)
+-  The settings it uses(optional and required)
 
 Integrating coala into Your Project
 -----------------------------------
@@ -347,10 +345,10 @@ coala. You can try it out in the coala-tutorial repository:
 
 ::
 
-    git submodule add https://github.com/coala-analyzer/coala.git
-    git commit -m 'Add coala submodule'
+    git submodule add https: // github.com/coala-analyzer/coala
+    git commit - m 'Add coala submodule'
     git add .coafile
-    git commit -m 'Add .coafile'
+    git commit - m 'Add .coafile'
 
 You can now use ``coala/coala`` as if it were the installed binary.
 Here's the instructions for your developers:
@@ -365,18 +363,17 @@ Continuing the Journey
 ----------------------
 
 If you want to know about more options, take a look at our help with
-``coala -h``. If you liked or disliked this tutorial, feel free to drop
-us a note at our bug tracker (github) or mailing list
-(https://groups.google.com/forum/#!forum/coala-devel).
+``coala - h``. If you liked or disliked this tutorial, feel free to drop
+us a note at our bug tracker(github) or mailing list
+(https: // groups.google.com/forum /  # !forum/coala-devel).
 
 If you need more flexibility, know that coala is extensible in many ways
 due to its modular design:
 
--  If you want to write your own bears, take a look at sources lying in
-   ``bears`` and ``coalib/bearlib``.
--  If you want to add custom actions for results, take a look at the
+- If you want to write your own bears, take a look at sources lying in ``bears`` and ``coalib/bearlib``.
+- If you want to add custom actions for results, take a look at the
    code in ``coalib/results/results_actions``.
--  If you want to have some custom outputs (e.g. HTML pages, a GUI or
+- If you want to have some custom outputs(e.g. HTML pages, a GUI or
    voice interaction) take a look at modules lying in ``coalib/output``.
 
 Happy coding!

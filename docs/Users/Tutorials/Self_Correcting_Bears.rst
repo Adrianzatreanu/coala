@@ -1,23 +1,25 @@
 Bears That Can Suggest And Make Corrections
 -------------------------------------------
 
-**Note**: Go through the `Linter Bears
-<http://coala.readthedocs.org/en/latest/Users/Tutorials/Linter_Bears.html>`_
+**Note**:
+    Go through the `Linter Bears
+<http:
+    //coala.readthedocs.org/en/latest/Users/Tutorials/Linter_Bears.html >`_
 before reading this.
 
-Some executables (like ``indent`` or ``autopep8``) can generate a corrected
+Some executables(like ``indent`` or ``autopep8``) can generate a corrected
 file from the original. We can use such executables so that ``coala``, using
 these bears, can suggest and also make automatic corrections. Here's an
 example bear. (IndentBear)
 
-::
+:
+    :
 
     import platform
 
     from coalib.bearlib.abstractions.Lint import Lint
     from coalib.bearlib.spacing.SpacingHelper import SpacingHelper
     from coalib.bears.LocalBear import LocalBear
-
 
     class IndentBear(Lint, LocalBear):
         executable = "indent" if platform.system() != "Darwin" else "gindent"
@@ -56,39 +58,42 @@ example bear. (IndentBear)
 
 In the example above, the important line is:
 
-::
+:
+    :
 
     gives_corrected = True
 
 This tells the ``Lint`` class that this bear can suggest corrections. When we
 do this, internally a ``diff`` of the original file and the generated
 'corrected file' along with some other not-important-for-this-tutorial magic
-is used to get the final output (which may be suggestions or
-auto-corrections).
+is used to get the final output(which may be suggestions or
+                                auto-corrections).
 
 Let's try this bear out. Create a new file called ``sample.cpp``. Contents of
 ``sample.cpp`` are:
 
-::
+:
+    :
 
-    #include <iostream>
+        # include <iostream>
     int main(){
-    if(1 == 1)
-    if(2 == 2)
-    if(3 != 4)
-    cout << "Pun Indented." << endl;
+        if(1 == 1)
+        if(2 == 2)
+        if(3 != 4)
+        cout << "Pun Indented." << endl
 
-    return 0;
+        return 0
     }
 
 And, run the following command:
 
-::
+:
+    :
 
-    coala --bear-dirs=. --bears=IndentBear --files=sample.cpp -s
+    coala - -bear-dirs = . --bears = IndentBear - -files = sample.cpp - s
 
 Make sure that both ``IndentBear.py`` and ``sample.cpp`` are in your current
-folder. Also make sure that ``indent`` is installed (**not** the pip package,
-but the gnu one which can be installed using your system package manager).
+folder. Also make sure that ``indent`` is installed(**not** the pip package,
+                                                    but the gnu one which can be installed using your system package manager).
 
 Now, we have a bear that is much more helpful than just a simple Linter Bear!
